@@ -24,7 +24,7 @@ function Home() {
     <div className="bg-yellow-400">
       <div className="px-8 pb-8 font-serif">
         <h1 className="py-16 font-bold text-center underline decoration-wavy underline-offset-8 decoration-gray-200 text-rose-800 text-8xl">
-          Movie App
+          MOVIE APP 2022
         </h1>
         {isLoading ? (
           <p className="py-48 text-xl text-center text-rose-800">Loading...</p>
