@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Detail() {
   const id = useParams().id;
@@ -24,22 +25,28 @@ function Detail() {
       {isLoading ? (
         <p className="text-3xl">Loading</p>
       ) : (
-        <div className="flex bg-gray-200 rounded-xl">
+        <div className="flex bg-gray-200 shadow-lg rounded-xl">
+          <div className=" w-"></div>
           <img src={details.large_cover_image} className="rounded-xl grow-0" />
-          <div className="p-8 grow">
+          <div className="flex flex-col p-8 grow">
             <h1 className="text-4xl font-bold">{details.title}</h1>
             <p className="text-gray-500">{details.year}</p>
-            <p className="py-8">
-              | {details.mpa_rating === "" ? "?" : details.mpa_rating} |
-              Runtime: {details.runtime} | Rating: {details.rating} |
-            </p>
-            <p>
-              |
-              {details.genres.map((g) => {
-                return ` ${g} | `;
-              })}
-            </p>
-            <p>{details.description_full}</p>
+            <div className="grow">
+              <p className="py-8">
+                | 🙋‍♀️ {details.mpa_rating === "" ? "?" : details.mpa_rating} | ⏰{" "}
+                {details.runtime} | ⭐️ {details.rating} |
+              </p>
+              <p>
+                |
+                {details.genres.map((g) => {
+                  return ` ${g} | `;
+                })}
+              </p>
+              <p>{details.description_full}</p>
+            </div>
+            <Link to="/" className="p-1 mt-10 bg-yellow-400 rounded-md">
+              back
+            </Link>
           </div>
         </div>
       )}
